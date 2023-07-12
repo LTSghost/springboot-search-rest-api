@@ -11,6 +11,7 @@
 	<groupId>net.java.test</groupId>
 	<artifactId>springboot-search-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>springboot-search-rest-api</name>
 	<description>Spring boot search rest api with MySQL database</description>
 	<properties>
@@ -59,7 +60,13 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
-		  </dependency>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.4.0</version>
+		</dependency>
 
 	</dependencies>
 
@@ -77,6 +84,19 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!-- <plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<attachClasses>true</attachClasses>
+					<webXml>target/web.xml</webXml>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin> -->
 		</plugins>
 	</build>
 
